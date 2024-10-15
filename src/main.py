@@ -41,7 +41,8 @@ def LoadStructures():
         for OneStructure in SystemsReader:
             if (OneStructure["Structure"] not in StructureNamesList):
                 StructureNamesList.append(OneStructure["Structure"])
-                StructuresList.append(OneStructure)
+
+            StructuresList.append(OneStructure)
 
     StructureNamesList.sort()
     StructureChoice["values"] = StructureNamesList
@@ -61,21 +62,48 @@ def RunFoldering():
     ProgressStep = 100 / NumberOfSystems
     CurrentSystem = 1
 
+    #  Get the information for the target structure and mapping.
+    StructureFolders = []
+    Mapping = []
+
+    for OneStructure in StructuresList:
+        if (OneStructure["Structure"].lower() == SelectedStructureName.get().lower()):
+            StructureFolders.append(OneStructure)
+
     #  Loop through systems.
+    SystemNames = []
     for OneSystem in SystemsList:
         RunProgressValue.set(ProgressStep * CurrentSystem)
         ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:g}%".format(RunProgressValue.get()), anchor="center")
         CurrentSystem = CurrentSystem + 1
 
-        #  Find the folder(s) for that system.
-        SystemFolders = FindFoldersForSystem(OneSystem["System"])
+        if (not OneSystem["System"].lower() in SystemNames):
+            SystemNames.append(OneSystem["System"].lower())
+
+            #  Get the keywords for the system.
+            Keywords = GetKeywordsForSystem(OneSystem["System"])
+
+            #  Get the folder(s) for that system.
+            SourceFolders = FindFoldersForSystem(Keywords)
+
+            #  Get the destination folder.  Set it to something silly in case this fails.
+            DestinationFolder = "///NULL"
+
+            print("StructureFolders: ", StructureFolders)
+            for OneStructure in StructureFolders:
+                if (OneStructure["Folder"].lower() in Keywords):
+                    DestinationFolder = OneStructure["Folder"]
+
+            #  Now that we have the folders.  Add them to the mapping.
+            for OneSourceFolder in SourceFolders:
+                Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
+
+    for Map in Mapping:
+        print(Map)
 
 
-def FindFoldersForSystem(SystemName):
+def FindFoldersForSystem(Keywords):
     FolderNames = []
-
-    #  Get keywords for this system.
-    Keywords = GetKeywordsForSystem(SystemName)
 
     #  Loop through the source folders.
     for FolderName in os.listdir(ROMsFolder.get()):
@@ -94,8 +122,8 @@ def GetKeywordsForSystem(SystemName):
 
     for OneSystem in SystemsList:
         #  Find the keywords for that system.
-        if (OneSystem["System"] == SystemName):
-            Keywords.append(OneSystem["Keyword"])
+        if (OneSystem["System"].lower() == SystemName.lower()):
+            Keywords.append(OneSystem["Keyword"].lower())
 
     return Keywords
 
@@ -107,14 +135,16 @@ MainMenu = tk.Menu(MainWindow)
 DataFolder=tk.StringVar()
 DataFolder.set(os.path.join(os.getcwd(), "data"))
 ROMsFolder=tk.StringVar()
-ROMsFolder.set(os.getcwd())
+ROMsFolder.set(os.path.join(os.getcwd(), "input"))
 OutputFolder=tk.StringVar()
-OutputFolder.set(os.getcwd())
+OutputFolder.set(os.path.join(os.getcwd(), "output"))
 RunProgressValue = tk.DoubleVar()
 RunProgressValue.set(0)
 StructureNamesList = []
 StructuresList = []
 SystemsList = []
+SelectedStructureName = tk.StringVar()
+SelectedStructureName.set("RG35XX Knuli")
 
 FileMenu = tk.Menu(MainMenu, tearoff=0)
 FileMenu.add_command(label="Exit", command=MainWindow.destroy)
@@ -128,7 +158,7 @@ DataFolderEntry.grid(row=0, column=1, sticky="ew")
 DataFolderButton.grid(row=0, column=2, sticky="ew")
 
 StructuresLabel = tk.Label(MainWindow, text="Output Structure")
-StructureChoice = ttk.Combobox(MainWindow, values=StructureNamesList)
+StructureChoice = ttk.Combobox(MainWindow, values=StructureNamesList, textvariable=SelectedStructureName)
 StructuresLabel.grid(row=1, column=0, sticky="e")
 StructureChoice.grid(row=1, column=1, sticky="ew")
 
