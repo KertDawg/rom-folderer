@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 import os
+import shutil
+import glob
 import csv
 import tkinter as tk
 from tkinter import filedialog
@@ -57,10 +59,7 @@ def LoadStructures():
 
 #  Copy files to the output folders.
 def RunFoldering():
-    #  Calculate progress bar values.
-    NumberOfSystems = len(SystemsList)
-    ProgressStep = 100 / NumberOfSystems
-    CurrentSystem = 1
+    ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="Figuring out folders...", anchor="center")
 
     #  Get the information for the target structure and mapping.
     StructureFolders = []
@@ -73,10 +72,6 @@ def RunFoldering():
     #  Loop through systems.
     SystemNames = []
     for OneSystem in SystemsList:
-        RunProgressValue.set(ProgressStep * CurrentSystem)
-        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:g}%".format(RunProgressValue.get()), anchor="center")
-        CurrentSystem = CurrentSystem + 1
-
         if (not OneSystem["System"].lower() in SystemNames):
             SystemNames.append(OneSystem["System"].lower())
 
@@ -89,17 +84,39 @@ def RunFoldering():
             #  Get the destination folder.  Set it to something silly in case this fails.
             DestinationFolder = "///NULL"
 
-            print("StructureFolders: ", StructureFolders)
             for OneStructure in StructureFolders:
                 if (OneStructure["Folder"].lower() in Keywords):
-                    DestinationFolder = OneStructure["Folder"]
+                    DestinationFolder = os.path.join(OutputFolder.get(), OneStructure["Folder"])
 
             #  Now that we have the folders.  Add them to the mapping.
             for OneSourceFolder in SourceFolders:
                 Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
 
+    #  Get full file paths.
+    ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="Figuring out files...", anchor="center")
+    FilesToCopy = []
+
     for Map in Mapping:
-        print(Map)
+        for OneFile in glob.glob(os.path.join(ROMsFolder.get(), Map["From"], "*")):
+            FilesToCopy.append({ "From": OneFile, "To": os.path.join(OutputFolder.get(), Map["To"])})
+
+    #  Calculate progress bar values.
+    FilesToCopyLength = len(FilesToCopy)
+    ProgressStep = 100 / FilesToCopyLength
+    CurrentMap = 1
+
+    for OneFile in FilesToCopy:
+        RunProgressValue.set(ProgressStep * CurrentMap)
+        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:g}%".format(RunProgressValue.get()), anchor="center")
+        CurrentMap = CurrentMap + 1
+
+        #  Make the folder if necessary.
+        if not os.path.exists(OneFile["To"]):
+            print("DestinationFolder: ", OneFile["To"])
+            os.makedirs(DestinationFolder)
+
+        #  Copy files.
+        shutil.copy(OneFile["From"], OneFile["To"])
 
 
 def FindFoldersForSystem(Keywords):
