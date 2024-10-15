@@ -1,5 +1,5 @@
 ﻿Structure,System,Folder
-RG35XX Knuli,nes,nes
-RG35XX Knuli,snes,snes
-Structure 2,nes,fc
-Structure 2,snes,sfc
+RG35XX Knuli,Nintendo Entertainment System,nes
+RG35XX Knuli,Super Nintendo Entertainment System,snes
+Structure 2,Nintendo Entertainment System,fc
+Structure 2,Super Nintendo Entertainment System,sfc
