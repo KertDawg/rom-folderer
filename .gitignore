@@ -1,4 +1,5 @@
 .venv
+.vscode
 dist
 build
 *.cache
@@ -9,3 +10,5 @@ Makefile.in
 config.*
 Makefile
 rom-folderer
+output
+input
