@@ -36,11 +36,11 @@ def LoadStructures():
     StructuresList = []
     SystemsList = []
 
-    #  Load the systems.
-    with open(StructuresFileName, "r", encoding="utf-8-sig") as SystemsFile:
-        SystemsReader = csv.DictReader(SystemsFile)
+    #  Load the structures.
+    with open(StructuresFileName, "r", encoding="utf-8-sig") as StructuresFile:
+        StructuresReader = csv.DictReader(StructuresFile)
 
-        for OneStructure in SystemsReader:
+        for OneStructure in StructuresReader:
             if (OneStructure["Structure"] not in StructureNamesList):
                 StructureNamesList.append(OneStructure["Structure"])
 
@@ -49,7 +49,7 @@ def LoadStructures():
     StructureNamesList.sort()
     StructureChoice["values"] = StructureNamesList
 
-    #  Load systems.
+    #  Load the systems.
     with open(SystemsFileName, "r", encoding="utf-8-sig") as SystemsFile:
         SystemsReader = csv.DictReader(SystemsFile)
 
@@ -60,6 +60,8 @@ def LoadStructures():
 #  Copy files to the output folders.
 def RunFoldering():
     ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="Figuring out folders...", anchor="center")
+    MainMenu.update()
+    
 
     #  Get the information for the target structure and mapping.
     StructureFolders = []
@@ -90,10 +92,12 @@ def RunFoldering():
 
             #  Now that we have the folders.  Add them to the mapping.
             for OneSourceFolder in SourceFolders:
-                Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
+                if (not DestinationFolder == "///NULL"):
+                    Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
 
     #  Get full file paths.
     ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="Figuring out files...", anchor="center")
+    MainMenu.update()
     FilesToCopy = []
 
     for Map in Mapping:
@@ -107,7 +111,8 @@ def RunFoldering():
 
     for OneFile in FilesToCopy:
         RunProgressValue.set(ProgressStep * CurrentMap)
-        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:g}%".format(RunProgressValue.get()), anchor="center")
+        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{::10.0f}%".format(RunProgressValue.get()), anchor="center")
+        MainMenu.update()
         CurrentMap = CurrentMap + 1
 
         #  Make the folder if necessary.
