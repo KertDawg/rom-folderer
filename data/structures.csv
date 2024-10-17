@@ -1,5 +1,164 @@
-﻿Structure,System,Folder
-RG35XX Knuli,Nintendo Entertainment System,nes
-RG35XX Knuli,Super Nintendo Entertainment System,snes
-Structure 2,Nintendo Entertainment System,fc
-Structure 2,Super Nintendo Entertainment System,sfc
+﻿System,Keyword
+3DO Interactive Multiplayer,3do
+Aamber Pegasus,pegasus
+Acorn Archimedes,archimedes
+Acorn Atom,atom
+Acorn Electron,electron
+Amstrad CPC,
+Amstrad GX4000,
+Android,android
+APF Imagination Machine,
+Apogee BK-01,
+Apple II,"apple 2,a2,apple2"
+Apple IIGS,iigs
+Apple iOS,ios
+Apple Mac OS,macos
+Arcade,mame
+Atari 2600,"2600,vcs"
+Atari 5200,"5200,a5200"
+Atari 7800,"7800,a7800"
+Atari 800,"a800,a800"
+Atari Jaguar,jaguar
+Atari Jaguar CD,"jaguarcd,jagual-cd"
+Atari Lynx,lynx
+Atari ST,"st,ast"
+Atari XEGS,
+Bally Astrocade,
+BBC Microcomputer System,
+Camputers Lynx,
+Casio Loopy,
+Casio PV-1000,
+Coleco ADAM,adam
+ColecoVision,colecovision
+Commodore 128,"c128,c-128"
+Commodore 64,c64
+Commodore Amiga,amiga
+Commodore Amiga CD32,"amigacd,cdtv"
+Commodore CDTV,
+Commodore MAX Machine,
+Commodore PET,"pet,cpet"
+Commodore Plus 4,"plus 4,plus-4,plus4"
+Commodore VIC-20,"vic20,vic-20,vic 20"
+DOS,DOS
+Dragon 32_64,
+EACA EG2000 Colour Genie,
+Elektronika BK,
+Emerson Arcadia 2001,
+Enterprise,
+Entex Adventure Vision,
+Epoch Game Pocket Computer,
+Epoch Super Cassette Vision,
+Exelvision EXL 100,
+Exidy Sorcerer,
+Fairchild Channel F,"failchild,channel f,channelf,chennel-f"
+Fujitsu FM Towns Marty,
+Fujitsu FM-7,
+Funtech Super Acan,
+Game Wave Family Entertainment System,
+GamePark GP32,
+GCE Vectrex,vectrex
+Hartung Game Master,
+Hector HRX,
+Interton VC 4000,"4000,ivc"
+Jupiter Ace,ace
+Magnavox Odyssey,odyssey
+Magnavox Odyssey 2,odyssey 2
+Matra and Hachette Alice,
+Mattel Aquarius,
+Mattel HyperScan,"mhs,hyperscan"
+Mattel Intellivision,intellivision
+Mega Duck,
+Memotech MTX512,
+Microsoft MSX,
+Microsoft MSX2,
+Microsoft MSX2+,
+Microsoft Xbox,xbox
+Microsoft Xbox 360,xbox 360
+Microsoft Xbox One,"xbo,xbone"
+Microsoft Xbox Series X_S,sxs
+MUGEN,
+NEC PC-8801,
+NEC PC-9801,
+NEC PC-FX,
+NEC TurboGrafx-16,"pce,pcengine"
+NEC TurboGrafx-CD,"tgcd,tg-cd,pcecd,pcengine-cd"
+Nintendo 3DS,"3ds,n3ds"
+Nintendo 64,n64
+Nintendo 64DD,"64dd,n64dd"
+Nintendo DS,"ds,nds"
+Nintendo Entertainment System,"nes,fc"
+Nintendo Famicom Disk System,fds
+Nintendo Game & Watch,ngw
+Nintendo Game Boy,gba
+Nintendo Game Boy Advance,gba
+Nintendo Game Boy Color,gbc
+Nintendo GameCube,"ngc,gc"
+Nintendo Pokemon Mini,"npm,pm"
+Nintendo Satellaview,satellaview
+Nintendo Switch,switch
+Nintendo Virtual Boy,"nvb,vb"
+Nintendo Wii,wii
+Nintendo Wii U,"wii-u,wiiu"
+Nuon,
+OpenBOR,
+Oric Atmos,
+Othello Multivision,
+Ouya,
+PC Engine SuperGrafx,
+Philips CD-i,"cdi,cd-i"
+Philips VG 5000,"5000,pvg"
+Philips Videopac+,videopac+
+PICO-8,"pico8,pico-8,pico"
+RCA Studio II,
+SCUMMVM,scrumm
+Sega 32X,"32x,s32x"
+Sega CD,scd
+Sega CD 32X,"32x,scd32x"
+Sega Dreamcast,dreamcast
+Sega Dreamcast VMU,
+Sega Game Gear,"sgg,gg"
+Sega Genesis,"genesis,md,smd"
+Sega Master System,"ms,sms"
+Sega Pico,pico
+Sega Saturn,saturn
+Sega SC-3000,"sg3000,sg-3000"
+Sega SG-1000,"sg1000,sg-1000"
+Sharp MZ-2500,"mz-2500,mz2500"
+Sharp X1,x1
+Sharp X68000,x68000
+Sinclair ZX Spectrum,spectrum
+Sinclair ZX-81,"zx-81,zx81"
+SNK Neo Geo AES,"ngaes,ng-aes"
+SNK Neo Geo CD,ngcdng-cd
+SNK Neo Geo Pocket,ngp
+SNK Neo Geo Pocket Color,ngpcng-color
+Sony Playstation,"ps,ps1"
+Sony Playstation 2,"playstation 2,ps1"
+Sony Playstation 3,"playstation 3,ps3"
+Sony Playstation 4,"playstation 4,ps4"
+Sony Playstation 5,"playstation 5,ps5"
+Sony Playstation Vita,"psv,vita"
+Sony PocketStation,pocketstation
+Sony PSP,"psp,spsp"
+Sony PSP Minis,psp-mini
+Sord M5,"m5,sm5"
+Spectravideo,
+Super Nintendo Entertainment System,"snes,sfc"
+Taito Type X,"taito,typex,type-x"
+Tandy TRS-80,"trs80,trs-80"
+Tapwave Zodiac,zodiac
+Texas Instruments TI 99_4A,"ti99,ti-99"
+Tiger Game.com,tiger
+Tomy Tutor,"tutor,tomytutor"
+TRS-80 Color Computer,"trs-80coco,coco"
+Vector-06C,"06c,vector"
+VTech CreatiVision,"vtcv,creativision"
+VTech Socrates,socrates
+VTech V.Smile,"v.smile,vspile"
+"watara,supervision",supervision
+Windows,win.pc
+WonderSwan,
+WonderSwan Color,wsc
+WoW Action Max,wam
+XaviXPORT,
+ZiNc,

@@ -1,5 +1,185 @@
-﻿System,Keyword
-Nintendo Entertainment System,nes
-Nintendo Entertainment System,fc
-Super Nintendo Entertainment System,snes
-Super Nintendo Entertainment System,sfc
+﻿Structure,System,Folder
+LaunchBox,Commodore 64,Commodore 64
+LaunchBox,Nintendo Entertainment System,Nintendo Entertainment System
+LaunchBox,Sony Playstation,Sony Playstation
+LaunchBox,Arcade,Arcade
+LaunchBox,Super Nintendo Entertainment System,Super Nintendo Entertainment System
+LaunchBox,Sega Genesis,Sega Genesis
+LaunchBox,Nintendo Game Boy Advance,Nintendo Game Boy Advance
+LaunchBox,Nintendo Game Boy,Nintendo Game Boy
+LaunchBox,SNK Neo Geo AES,SNK Neo Geo AES
+LaunchBox,Nintendo Game Boy Color,Nintendo Game Boy Color
+LaunchBox,NEC TurboGrafx-16,NEC TurboGrafx-16
+LaunchBox,Sega Master System,Sega Master System
+LaunchBox,Sega CD,Sega CD
+LaunchBox,Atari 2600,Atari 2600
+LaunchBox,Sega Game Gear,Sega Game Gear
+LaunchBox,SNK Neo Geo CD,SNK Neo Geo CD
+LaunchBox,NEC TurboGrafx-CD,NEC TurboGrafx-CD
+LaunchBox,SNK Neo Geo Pocket,SNK Neo Geo Pocket
+LaunchBox,Sega CD 32X,Sega CD 32X
+LaunchBox,Atari Lynx,Atari Lynx
+LaunchBox,Sony PSP,Sony PSP
+LaunchBox,Nintendo DS,Nintendo DS
+LaunchBox,ZiNc,ZiNc
+LaunchBox,XaviXPORT,XaviXPORT
+LaunchBox,WonderSwan Color,WonderSwan Color
+LaunchBox,WonderSwan,WonderSwan
+LaunchBox,WoW Action Max,WoW Action Max
+LaunchBox,Windows,Windows
+LaunchBox,"watara,supervision","watara,supervision"
+LaunchBox,Vector-06C,Vector-06C
+LaunchBox,VTech V.Smile,VTech V.Smile
+LaunchBox,VTech Socrates,VTech Socrates
+LaunchBox,VTech CreatiVision,VTech CreatiVision
+LaunchBox,Tomy Tutor,Tomy Tutor
+LaunchBox,Tiger Game.com,Tiger Game.com
+LaunchBox,Texas Instruments TI 99_4A,Texas Instruments TI 99_4A
+LaunchBox,Tapwave Zodiac,Tapwave Zodiac
+LaunchBox,Tandy TRS-80,Tandy TRS-80
+LaunchBox,Taito Type X,Taito Type X
+LaunchBox,TRS-80 Color Computer,TRS-80 Color Computer
+LaunchBox,Spectravideo,Spectravideo
+LaunchBox,Sord M5,Sord M5
+LaunchBox,Sony PocketStation,Sony PocketStation
+LaunchBox,Sony Playstation Vita,Sony Playstation Vita
+LaunchBox,Sony Playstation 5,Sony Playstation 5
+LaunchBox,Sony Playstation 4,Sony Playstation 4
+LaunchBox,Sony Playstation 3,Sony Playstation 3
+LaunchBox,Sony Playstation 2,Sony Playstation 2
+LaunchBox,Sony PSP Minis,Sony PSP Minis
+LaunchBox,Sinclair ZX-81,Sinclair ZX-81
+LaunchBox,Sinclair ZX Spectrum,Sinclair ZX Spectrum
+LaunchBox,Sharp X68000,Sharp X68000
+LaunchBox,Sharp X1,Sharp X1
+LaunchBox,Sharp MZ-2500,Sharp MZ-2500
+LaunchBox,Sega Saturn,Sega Saturn
+LaunchBox,Sega SG-1000,Sega SG-1000
+LaunchBox,Sega SC-3000,Sega SC-3000
+LaunchBox,Sega Pico,Sega Pico
+LaunchBox,Sega Dreamcast VMU,Sega Dreamcast VMU
+LaunchBox,Sega Dreamcast,Sega Dreamcast
+LaunchBox,Sega 32X,Sega 32X
+LaunchBox,ScummVM,ScummVM
+LaunchBox,SNK Neo Geo Pocket Color,SNK Neo Geo Pocket Color
+LaunchBox,SAM CoupÃ©,SAM CoupÃ©
+LaunchBox,RCA Studio II,RCA Studio II
+LaunchBox,Philips Videopac+,Philips Videopac+
+LaunchBox,Philips VG 5000,Philips VG 5000
+LaunchBox,Philips CD-i,Philips CD-i
+LaunchBox,PICO-8,PICO-8
+LaunchBox,PC Engine SuperGrafx,PC Engine SuperGrafx
+LaunchBox,Ouya,Ouya
+LaunchBox,Othello Multivision,Othello Multivision
+LaunchBox,Oric Atmos,Oric Atmos
+LaunchBox,OpenBOR,OpenBOR
+LaunchBox,Nuon,Nuon
+LaunchBox,Nintendo Wii U,Nintendo Wii U
+LaunchBox,Nintendo Wii,Nintendo Wii
+LaunchBox,Nintendo Virtual Boy,Nintendo Virtual Boy
+LaunchBox,Nintendo Switch,Nintendo Switch
+LaunchBox,Nintendo Satellaview,Nintendo Satellaview
+LaunchBox,Nintendo Pokemon Mini,Nintendo Pokemon Mini
+LaunchBox,Nintendo GameCube,Nintendo GameCube
+LaunchBox,Nintendo Game & Watch,Nintendo Game & Watch
+LaunchBox,Nintendo Famicom Disk System,Nintendo Famicom Disk System
+LaunchBox,Nintendo 64DD,Nintendo 64DD
+LaunchBox,Nintendo 64,Nintendo 64
+LaunchBox,Nintendo 3DS,Nintendo 3DS
+LaunchBox,NEC PC-FX,NEC PC-FX
+LaunchBox,NEC PC-9801,NEC PC-9801
+LaunchBox,NEC PC-8801,NEC PC-8801
+LaunchBox,Microsoft Xbox Series X_S,Microsoft Xbox Series X_S
+LaunchBox,Microsoft Xbox One,Microsoft Xbox One
+LaunchBox,Microsoft Xbox 360,Microsoft Xbox 360
+LaunchBox,Microsoft Xbox,Microsoft Xbox
+LaunchBox,Microsoft MSX2+,Microsoft MSX2+
+LaunchBox,Microsoft MSX2,Microsoft MSX2
+LaunchBox,Microsoft MSX,Microsoft MSX
+LaunchBox,Memotech MTX512,Memotech MTX512
+LaunchBox,Mega Duck,Mega Duck
+LaunchBox,Mattel Intellivision,Mattel Intellivision
+LaunchBox,Mattel HyperScan,Mattel HyperScan
+LaunchBox,Mattel Aquarius,Mattel Aquarius
+LaunchBox,Matra and Hachette Alice,Matra and Hachette Alice
+LaunchBox,Magnavox Odyssey 2,Magnavox Odyssey 2
+LaunchBox,Magnavox Odyssey,Magnavox Odyssey
+LaunchBox,MUGEN,MUGEN
+LaunchBox,Jupiter Ace,Jupiter Ace
+LaunchBox,Interton VC 4000,Interton VC 4000
+LaunchBox,Hector HRX,Hector HRX
+LaunchBox,Hartung Game Master,Hartung Game Master
+LaunchBox,GamePark GP32,GamePark GP32
+LaunchBox,Game Wave Family Entertainment System,Game Wave Family Entertainment System
+LaunchBox,GCE Vectrex,GCE Vectrex
+LaunchBox,Funtech Super Acan,Funtech Super Acan
+LaunchBox,Fujitsu FM-7,Fujitsu FM-7
+LaunchBox,Fujitsu FM Towns Marty,Fujitsu FM Towns Marty
+LaunchBox,Fairchild Channel F,Fairchild Channel F
+LaunchBox,Exidy Sorcerer,Exidy Sorcerer
+LaunchBox,Exelvision EXL 100,Exelvision EXL 100
+LaunchBox,Epoch Super Cassette Vision,Epoch Super Cassette Vision
+LaunchBox,Epoch Game Pocket Computer,Epoch Game Pocket Computer
+LaunchBox,Entex Adventure Vision,Entex Adventure Vision
+LaunchBox,Enterprise,Enterprise
+LaunchBox,Emerson Arcadia 2001,Emerson Arcadia 2001
+LaunchBox,Elektronika BK,Elektronika BK
+LaunchBox,EACA EG2000 Colour Genie,EACA EG2000 Colour Genie
+LaunchBox,Dragon 32_64,Dragon 32_64
+LaunchBox,Commodore VIC-20,Commodore VIC-20
+LaunchBox,Commodore Plus 4,Commodore Plus 4
+LaunchBox,Commodore PET,Commodore PET
+LaunchBox,Commodore MAX Machine,Commodore MAX Machine
+LaunchBox,Commodore CDTV,Commodore CDTV
+LaunchBox,Commodore Amiga CD32,Commodore Amiga CD32
+LaunchBox,Commodore Amiga,Commodore Amiga
+LaunchBox,Commodore 128,Commodore 128
+LaunchBox,ColecoVision,ColecoVision
+LaunchBox,Coleco ADAM,Coleco ADAM
+LaunchBox,Casio PV-1000,Casio PV-1000
+LaunchBox,Casio Loopy,Casio Loopy
+LaunchBox,Camputers Lynx,Camputers Lynx
+LaunchBox,Bally Astrocade,Bally Astrocade
+LaunchBox,BBC Microcomputer System,BBC Microcomputer System
+LaunchBox,Atari XEGS,Atari XEGS
+LaunchBox,Atari ST,Atari ST
+LaunchBox,Atari Jaguar CD,Atari Jaguar CD
+LaunchBox,Atari Jaguar,Atari Jaguar
+LaunchBox,Atari 800,Atari 800
+LaunchBox,Atari 7800,Atari 7800
+LaunchBox,Atari 5200,Atari 5200
+LaunchBox,Apple iOS,Apple iOS
+LaunchBox,Apple Mac OS,Apple Mac OS
+LaunchBox,Apple IIGS,Apple IIGS
+LaunchBox,Apple II,Apple II
+LaunchBox,Apogee BK-01,Apogee BK-01
+LaunchBox,Android,Android
+LaunchBox,Amstrad GX4000,Amstrad GX4000
+LaunchBox,Amstrad CPC,Amstrad CPC
+LaunchBox,Acorn Electron,Acorn Electron
+LaunchBox,Acorn Atom,Acorn Atom
+LaunchBox,Acorn Archimedes,Acorn Archimedes
+LaunchBox,Aamber Pegasus,Aamber Pegasus
+LaunchBox,APF Imagination Machine,APF Imagination Machine
+LaunchBox,3DO Interactive Multiplayer,3DO Interactive Multiplayer
+RG35XX Knuli,Nintendo Entertainment System,nes
+RG35XX Knuli,Arcade,MAME
+RG35XX Knuli,Commodore 64,c64
+RG35XX Knuli,Atari 2600,atari2600
+RG35XX Knuli,Super Nintendo Entertainment System,snes
+RG35XX Knuli,Playstatio 1,psx
+RG35XX Knuli,Sega Genesis,megadrive
+RG35XX Knuli,Nintendo Game Boy,GBA
+RG35XX Knuli,Nintendo Game Boy Advance,GB
+RG35XX Knuli,SNK Neo Geo AES,NEOGEO
+RG35XX Knuli,SCUMMVM,SCUMMVM
+RG35XX Knuli,Atari Lynx,LYNX
+RG35XX Knuli,Nintendo 64,N64
+RG35XX Knuli,Nintendo Game Boy Color,GBC
+RG35XX Knuli,NEC TurboGrafx-16,PCE
+RG35XX Knuli,Sega Game Gear,GG
+RG35XX Knuli,Sony PSP,PSP
+RG35XX Knuli,Sega CD,SEGACD
+RG35XX Knuli,SNK Neo Geo CD,NEOCD
+RG35XX Knuli,NEC TurboGrafx-CD,PCECD
+RG35XX Knuli,DOS,DOS
