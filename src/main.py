@@ -111,7 +111,7 @@ def RunFoldering():
 
     for OneFile in FilesToCopy:
         RunProgressValue.set(ProgressStep * CurrentMap)
-        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{::10.0f}%".format(RunProgressValue.get()), anchor="center")
+        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:10.0f}%".format(RunProgressValue.get()), anchor="center")
         MainMenu.update()
         CurrentMap = CurrentMap + 1
 
