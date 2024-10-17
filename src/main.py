@@ -143,7 +143,7 @@ def GetKeywordsForSystem(SystemName):
             KeywordArray = OneSystem["Keyword"].lower().split()
 
             for Keyword in KeywordArray:
-                Keywords.append(Keyword.strip()replace('"', '').strip())
+                Keywords.append(Keyword.strip().replace('"', '').strip())
 
     return Keywords
 
