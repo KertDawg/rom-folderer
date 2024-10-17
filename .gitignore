@@ -3,6 +3,6 @@
 build
 *.spec
 rom-folderer
-romfolderer.exe
+rom-folderer.exe
 output
 input
