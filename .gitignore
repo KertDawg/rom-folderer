@@ -1,14 +1,7 @@
 .venv
 .vscode
-dist
 build
-*.cache
 *.spec
-configure
-Makefile.in
-*.m4
-config.*
-Makefile
 rom-folderer
 output
 input
