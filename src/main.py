@@ -112,8 +112,7 @@ def RunFoldering():
 
         #  Make the folder if necessary.
         if not os.path.exists(OneFile["To"]):
-            print("DestinationFolder: ", OneFile["To"])
-            os.makedirs(DestinationFolder)
+            os.makedirs(OneFile["To"])
 
         #  Copy files.
         shutil.copy(OneFile["From"], OneFile["To"])
