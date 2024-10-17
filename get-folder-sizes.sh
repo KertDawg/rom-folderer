@@ -7,5 +7,5 @@ echo "Folder,FileCount"
 
 for Folder in "${SizeArray[@]}"; do
     FolderArray=($Folder)
-    echo "${FolderArray[1]},${FolderArray[0]}"
+    echo "${FolderArray[@]:1},${FolderArray[0]}"
 done
