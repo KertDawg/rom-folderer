@@ -9,6 +9,10 @@ from tkinter import filedialog
 from tkinter import ttk
 
 
+DEBUGMODE = True
+
+
+
 def PickDataFolder():
     #  Show the folder dialog.
     DataFolder.set(filedialog.askdirectory(title="Choose the data folder", initialdir=DataFolder.get()))
@@ -93,6 +97,9 @@ def RunFoldering():
             #  Now that we have the folders.  Add them to the mapping.
             for OneSourceFolder in SourceFolders:
                 if (not DestinationFolder == "///NULL"):
+                    if DEBUGMODE:
+                        print("Copying folder ", OneSourceFolder, " to ", DestinationFolder)
+
                     Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
 
     #  Get full file paths.
@@ -118,10 +125,15 @@ def RunFoldering():
 
         #  Make the folder if necessary.
         if not os.path.exists(OneFile["To"]):
-            os.makedirs(OneFile["To"])
+            if DEBUGMODE:
+                print("Creating folder: ", OneFile["To"])
+            
+            if (not DEBUGMODE):
+                os.makedirs(OneFile["To"])
 
         #  Copy files.
-        shutil.copy(OneFile["From"], OneFile["To"])
+        if not (DEBUGMODE):
+            shutil.copy(OneFile["From"], OneFile["To"])
 
 
 def FindFoldersForSystem(Keywords):
@@ -132,7 +144,7 @@ def FindFoldersForSystem(Keywords):
         if os.path.isdir(os.path.join(ROMsFolder.get(), FolderName)):
             #  Loop through the keywords.
             for Keyword in Keywords:
-                if (FolderName.lower() == Keyword.lower()):
+                if ((FolderName.lower() == Keyword.lower()) and not (FolderName.lower() in FolderNames)):
                     FolderNames.append(FolderName)
                 
     return FolderNames
