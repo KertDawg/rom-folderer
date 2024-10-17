@@ -134,12 +134,16 @@ def FindFoldersForSystem(Keywords):
 
 def GetKeywordsForSystem(SystemName):
     #  Loop through the systems.
-    Keywords = []
+    Keywords = [SystemName.lower()]
 
     for OneSystem in SystemsList:
         #  Find the keywords for that system.
         if (OneSystem["System"].lower() == SystemName.lower()):
-            Keywords.append(OneSystem["Keyword"].lower())
+            #  Split the keywords into an array.
+            KeywordArray = OneSystem["Keyword"].lower().split()
+
+            for Keyword in KeywordArray:
+                Keywords.append(Keyword.strip())
 
     return Keywords
 
