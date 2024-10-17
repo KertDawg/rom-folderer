@@ -102,7 +102,8 @@ def RunFoldering():
 
     for Map in Mapping:
         for OneFile in glob.glob(os.path.join(ROMsFolder.get(), Map["From"], "*"), recursive=True):
-            FilesToCopy.append({ "From": OneFile, "To": os.path.join(OutputFolder.get(), Map["To"])})
+            if not os.path.isdir(OneFile):
+                FilesToCopy.append({ "From": OneFile, "To": os.path.join(OutputFolder.get(), Map["To"])})
 
     #  Calculate progress bar values.
     FilesToCopyLength = len(FilesToCopy)
@@ -111,7 +112,7 @@ def RunFoldering():
 
     for OneFile in FilesToCopy:
         RunProgressValue.set(ProgressStep * CurrentMap)
-        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:10.0f}%".format(RunProgressValue.get()), anchor="center")
+        ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="{:10.1f}%".format(RunProgressValue.get()), anchor="center")
         MainMenu.update()
         CurrentMap = CurrentMap + 1
 
