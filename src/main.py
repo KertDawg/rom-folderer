@@ -101,7 +101,7 @@ def RunFoldering():
     FilesToCopy = []
 
     for Map in Mapping:
-        for OneFile in glob.glob(os.path.join(ROMsFolder.get(), Map["From"], "*")):
+        for OneFile in glob.glob(os.path.join(ROMsFolder.get(), Map["From"], "*"), recursive=True):
             FilesToCopy.append({ "From": OneFile, "To": os.path.join(OutputFolder.get(), Map["To"])})
 
     #  Calculate progress bar values.
