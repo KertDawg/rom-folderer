@@ -13,17 +13,17 @@ If you have Python 3 installed, you can just run `src/main.py`.  You can also bu
 ## Building Binaries
 
 Requirements:
--Python 3 in the path
--PyInstaller in the path
+- Python 3 in the path
+- PyInstaller in the path
 
 ### Windows
--Run `make rom-folderer.exe`
+- Run `make rom-folderer.exe`
 
 ### WSL 2
--Run `make rom-folderer`
+- Run `make rom-folderer`
 
 ### macOS Homebrew
--Run `make rom-folderer`
+- Run `make rom-folderer`
 
 ## To Do
 1. Implement error handling
