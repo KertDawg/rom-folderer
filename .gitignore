@@ -6,3 +6,5 @@ rom-folderer
 rom-folderer.exe
 output
 input
+dmg
+*.dmg
