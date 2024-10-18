@@ -17,13 +17,13 @@ Requirements:
 -PyInstaller in the path
 
 ### Windows
--Run make rom-folderer.exe
+-Run `make rom-folderer.exe`
 
 ### WSL 2
--Run make rom-folderer
+-Run `make rom-folderer`
 
 ### macOS Homebrew
--Run make rom-folderer
+-Run `make rom-folderer`
 
 ## To Do
 1. Implement error handling
