@@ -49,11 +49,16 @@ def LoadStructures():
     StructureNamesList.sort()
     StructureChoice["values"] = StructureNamesList
 
-    #  Enable the run button.
-    RunButton["state"] = "active"
+    #  Enable the load everything else button.
+    StructureChoice["state"] = "active"
+    StructuresLabel["fg"] = "green"
+    LoadDataButton["bg"] = "lightgray"
+
+    #  Disable the run button.
+    RunButton["state"] = "disabled"
 
 
-def LoadEverythingElse():
+def LoadEverythingElse(EventObject):
     global SystemsList
 
     SystemsFileName = os.path.join(DataFolder.get(), "systems.csv")
@@ -67,13 +72,16 @@ def LoadEverythingElse():
             SystemsList.append(OneSystem)
 
     #  Enable the run button.
-    RunButton["state"] = "enabled"
+    RunButton["state"] = "active"
+    RunButton["bg"] = "green"
+    StructuresLabel["fg"] = "black"
 
 
 #  Copy files to the output folders.
 def RunFoldering():
     ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="Figuring out folders...", anchor="center")
     RunButton["state"] = "disabled"
+    RunButton["bg"] = "grey"
     MainMenu.update()
     
 
@@ -92,6 +100,9 @@ def RunFoldering():
             SystemNames.append(OneSystem["System"].lower())
 
             #  Get the keywords for the system.
+            if DEBUGMODE:
+                print("SystemName: ", OneSystem["System"])
+
             Keywords = GetKeywordsForSystem(OneSystem["System"])
 
             #  Get the folder(s) for that system.
@@ -101,14 +112,22 @@ def RunFoldering():
             DestinationFolder = "///NULL"
 
             for OneStructure in StructureFolders:
+#                Keywords.append(OneStructure["Folder"].lower())
+
+                if DEBUGMODE:
+                    print("  Testing folder: ", OneStructure)
+
                 if (OneStructure["Folder"].lower() in Keywords):
                     DestinationFolder = os.path.join(OutputFolder.get(), OneStructure["Folder"])
+
+                    if DEBUGMODE:
+                        print("  DestinationFolder", DestinationFolder)
 
             #  Now that we have the folders.  Add them to the mapping.
             for OneSourceFolder in SourceFolders:
                 if (not DestinationFolder == "///NULL"):
                     if DEBUGMODE:
-                        print("Copying folder ", OneSourceFolder, " to ", DestinationFolder)
+                        print("  Copying folder ", OneSourceFolder, " to ", DestinationFolder)
 
                     Mapping.append({ "From": OneSourceFolder, "To": DestinationFolder })
 
@@ -124,7 +143,7 @@ def RunFoldering():
 
     #  Calculate progress bar values.
     FilesToCopyLength = len(FilesToCopy)
-    ProgressStep = 100 / FilesToCopyLength
+    ProgressStep = 100 / (FilesToCopyLength if (FilesToCopyLength > 0) else 1)
     CurrentMap = 1
 
     for OneFile in FilesToCopy:
@@ -136,7 +155,7 @@ def RunFoldering():
         #  Make the folder if necessary.
         if not os.path.exists(OneFile["To"]):
             if DEBUGMODE:
-                print("Creating folder: ", OneFile["To"])
+                print("  Creating folder: ", OneFile["To"])
             
             if (not DEBUGMODE):
                 os.makedirs(OneFile["To"])
@@ -158,6 +177,9 @@ def FindFoldersForSystem(Keywords):
 
                     FolderNames.append(FolderName)
 
+    if DEBUGMODE:
+        print("  Folders: ", FolderNames)
+
     return FolderNames
 
 
@@ -174,11 +196,14 @@ def GetKeywordsForSystem(SystemName):
             for Keyword in KeywordArray:
                 Keywords.append(Keyword)
 
+    if DEBUGMODE:
+        print("  Keywords: ", Keywords)
+
     return Keywords
 
 
 MainWindow = tk.Tk()
-MainWindow.title("Rom Folderer")
+MainWindow.title("ROM Folderer")
 MainMenu = tk.Menu(MainWindow)
 
 DataFolder=tk.StringVar()
@@ -206,16 +231,14 @@ DataFolderLabel.grid(row=0, column=0, sticky="e", padx=8, pady=8)
 DataFolderEntry.grid(row=0, column=1, sticky="ew", padx=8, pady=8)
 DataFolderButton.grid(row=0, column=2, sticky="ew", padx=8, pady=8)
 
-LoadDataButton = tk.Button(MainWindow, text="Load Data", command=LoadStructures)
+LoadDataButton = tk.Button(MainWindow, text="Load Data", command=LoadStructures, bg="green")
 LoadDataButton.grid(row=1, column=2, sticky="ew", padx=8, pady=8)
 
 StructuresLabel = tk.Label(MainWindow, text="Output Structure")
-StructureChoice = ttk.Combobox(MainWindow, values=StructureNamesList, textvariable=SelectedStructureName)
+StructureChoice = ttk.Combobox(MainWindow, values=StructureNamesList, textvariable=SelectedStructureName, state="disabled")
+StructureChoice.bind("<<ComboboxSelected>>", LoadEverythingElse)
 StructuresLabel.grid(row=2, column=0, sticky="e", padx=8, pady=8)
 StructureChoice.grid(row=2, column=1, sticky="ew", padx=8, pady=8)
-
-LoadEverythingElseButton = tk.Button(MainWindow, text="Load Structure", command=LoadEverythingElse)
-LoadEverythingElseButton.grid(row=3, column=2, sticky="ew", padx=8, pady=8)
 
 ROMsFolderLabel = tk.Label(MainWindow, text="ROMs Folder")
 ROMsFolderEntry = tk.Entry(MainWindow, textvariable=ROMsFolder, width=40)
