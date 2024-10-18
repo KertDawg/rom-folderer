@@ -195,9 +195,6 @@ SystemsList = []
 SelectedStructureName = tk.StringVar()
 SelectedStructureName.set("")
 
-#  Load structures when the structer box is changed.
-SelectedStructureName.trace("w", LoadEverythingElse)
-
 FileMenu = tk.Menu(MainMenu, tearoff=0)
 FileMenu.add_command(label="Exit", command=MainWindow.destroy)
 MainMenu.add_cascade(label="File", menu=FileMenu)
@@ -217,19 +214,22 @@ StructureChoice = ttk.Combobox(MainWindow, values=StructureNamesList, textvariab
 StructuresLabel.grid(row=2, column=0, sticky="e", padx=8, pady=8)
 StructureChoice.grid(row=2, column=1, sticky="ew", padx=8, pady=8)
 
+LoadEverythingElseButton = tk.Button(MainWindow, text="Load Structure", command=LoadEverythingElse)
+LoadEverythingElseButton.grid(row=3, column=2, sticky="ew", padx=8, pady=8)
+
 ROMsFolderLabel = tk.Label(MainWindow, text="ROMs Folder")
 ROMsFolderEntry = tk.Entry(MainWindow, textvariable=ROMsFolder, width=40)
 ROMsFolderButton = tk.Button(MainWindow, text="...", command=PickROMsFolder)
-ROMsFolderLabel.grid(row=3, column=0, sticky="e", padx=8, pady=8)
-ROMsFolderEntry.grid(row=3, column=1, sticky="ew", padx=8, pady=8)
-ROMsFolderButton.grid(row=3, column=2, sticky="ew", padx=8, pady=8)
+ROMsFolderLabel.grid(row=4, column=0, sticky="e", padx=8, pady=8)
+ROMsFolderEntry.grid(row=4, column=1, sticky="ew", padx=8, pady=8)
+ROMsFolderButton.grid(row=4, column=2, sticky="ew", padx=8, pady=8)
 
 OutputFolderLabel = tk.Label(MainWindow, text="Output Folder")
 OutputFolderEntry = tk.Entry(MainWindow, textvariable=OutputFolder, width=40)
 OutputFolderButton = tk.Button(MainWindow, text="...", command=PickOutputFolder)
-OutputFolderLabel.grid(row=4, column=0, sticky="e", padx=8, pady=8)
-OutputFolderEntry.grid(row=4, column=1, sticky="ew", padx=8, pady=8)
-OutputFolderButton.grid(row=4, column=2, sticky="ew", padx=8, pady=8)
+OutputFolderLabel.grid(row=5, column=0, sticky="e", padx=8, pady=8)
+OutputFolderEntry.grid(row=5, column=1, sticky="ew", padx=8, pady=8)
+OutputFolderButton.grid(row=5, column=2, sticky="ew", padx=8, pady=8)
 
 ProgressBarStyle = ttk.Style(MainWindow)
 ProgressBarStyle.layout("text.Horizontal.TProgressbar", 
@@ -241,9 +241,9 @@ ProgressBarStyle.layout("text.Horizontal.TProgressbar",
 ProgressBarStyle.configure("text.Horizontal.TProgressbar", text="0%", anchor="center")
 
 RunButton = tk.Button(MainWindow, text="Run...", command=RunFoldering, state="disabled")
-RunButton.grid(row=5, column=0, padx=8, pady=8)
+RunButton.grid(row=6, column=0, padx=8, pady=8)
 RunProgress = ttk.Progressbar(MainWindow, maximum=100, style="text.Horizontal.TProgressbar", variable=RunProgressValue)
-RunProgress.grid(row=5, column=1, columnspan=2, sticky="ew", padx=8, pady=8)
+RunProgress.grid(row=6, column=1, columnspan=2, sticky="ew", padx=8, pady=8)
 
 MainWindow.config(menu=MainMenu)
 MainWindow.mainloop()
