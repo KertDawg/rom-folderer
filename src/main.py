@@ -9,7 +9,7 @@ from tkinter import filedialog
 from tkinter import ttk
 
 
-DEBUGMODE = True
+DEBUGMODE = False
 
 
 
@@ -145,8 +145,9 @@ def FindFoldersForSystem(Keywords):
             #  Loop through the keywords.
             for Keyword in Keywords:
                 if ((FolderName.lower() == Keyword.lower()) and not (FolderName.lower() in FolderNames)):
+
                     FolderNames.append(FolderName)
-                
+
     return FolderNames
 
 
@@ -158,10 +159,10 @@ def GetKeywordsForSystem(SystemName):
         #  Find the keywords for that system.
         if (OneSystem["System"].lower() == SystemName.lower()):
             #  Split the keywords into an array.
-            KeywordArray = OneSystem["Keyword"].lower().split()
+            KeywordArray = OneSystem["Keyword"].lower().strip().replace('"', '').strip().split(",")
 
             for Keyword in KeywordArray:
-                Keywords.append(Keyword.strip().replace('"', '').strip())
+                Keywords.append(Keyword)
 
     return Keywords
 
@@ -173,9 +174,9 @@ MainMenu = tk.Menu(MainWindow)
 DataFolder=tk.StringVar()
 DataFolder.set(os.path.join(os.getcwd(), "data"))
 ROMsFolder=tk.StringVar()
-ROMsFolder.set(os.path.join(os.getcwd(), "input"))
+ROMsFolder.set("/mnt/d/Emulators/LaunchBox/Games")#os.path.join(os.getcwd(), "input"))
 OutputFolder=tk.StringVar()
-OutputFolder.set(os.path.join(os.getcwd(), "output"))
+OutputFolder.set("/mnt/d/Emulators/rom-folderer-test")#os.path.join(os.getcwd(), "output"))
 RunProgressValue = tk.DoubleVar()
 RunProgressValue.set(0)
 StructureNamesList = []
