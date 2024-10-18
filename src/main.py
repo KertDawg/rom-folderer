@@ -269,4 +269,5 @@ RunProgress = ttk.Progressbar(MainWindow, maximum=100, style="text.Horizontal.TP
 RunProgress.grid(row=6, column=1, columnspan=2, sticky="ew", padx=8, pady=8)
 
 MainWindow.config(menu=MainMenu)
+MainWindow.resizable(False, False)
 MainWindow.mainloop()
