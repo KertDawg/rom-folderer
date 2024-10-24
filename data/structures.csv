@@ -176,10 +176,10 @@ RG35XX Knuli,SCUMMVM,SCUMMVM
 RG35XX Knuli,Atari Lynx,LYNX
 RG35XX Knuli,Nintendo 64,N64
 RG35XX Knuli,Nintendo Game Boy Color,GBC
-RG35XX Knuli,NEC TurboGrafx-16,PCE
+RG35XX Knuli,NEC TurboGrafx-16,pcengine
 RG35XX Knuli,Sega Game Gear,GG
 RG35XX Knuli,Sony PSP,PSP
 RG35XX Knuli,Sega CD,SEGACD
 RG35XX Knuli,SNK Neo Geo CD,NEOCD
-RG35XX Knuli,NEC TurboGrafx-CD,PCECD
+RG35XX Knuli,NEC TurboGrafx-CD,pcenginecd
 RG35XX Knuli,DOS,DOS
